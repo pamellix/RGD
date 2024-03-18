@@ -6,11 +6,11 @@ import { appJSON } from "../../utils/AxiosConfig";
 
 const initialState = {};
 
-export const createDetails = createAsyncThunk<void, Inter.CreateDetail, { rejectValue: string }>(
-	"details/createDetail",
-	async (data: Inter.CreateDetail, {rejectWithValue}) => {
+export const createUser = createAsyncThunk<void, Inter.CreateUser, { rejectValue: string }>(
+	"user/createUser",
+	async (data: Inter.CreateUser, {rejectWithValue}) => {
 		try {
-			const URL = `${process.env.REACT_APP_CREATE_DETAIL}`;
+			const URL = `${process.env.REACT_APP_CREATE_USER}`;
 			const response = await appJSON.post<void>(URL, data);
 
 			if (response.status === 200) {
@@ -20,7 +20,7 @@ export const createDetails = createAsyncThunk<void, Inter.CreateDetail, { reject
 		} catch
 		(error: unknown) {
 			if (error instanceof axios.AxiosError) {
-				alert("Ошибка! Такой код уже существует");
+				alert("Ошибка! Такой user уже существует");
 				return rejectWithValue(error.message);
 			}
 			throw error;
@@ -28,25 +28,25 @@ export const createDetails = createAsyncThunk<void, Inter.CreateDetail, { reject
 	}
 );
 
-const createDetailsSlice = createSlice({
-	name: "createDetail",
+const createUsersSlice = createSlice({
+	name: "createUser",
 	initialState,
 	reducers: {},
 	extraReducers: (builder) => {
-		builder.addCase(createDetails.fulfilled, (state, action) => {
+		builder.addCase(createUser.fulfilled, (state, action) => {
 			return action.payload;
 		});
-		builder.addCase(createDetails.rejected, (state) => {
+		builder.addCase(createUser.rejected, (state) => {
 			return state;
 		});
 	},
 });
 
 
-export const fetchCreateDetails = (data: Inter.CreateDetail) => {
+export const fetchCreateUser = (data: Inter.CreateUser) => {
 	return async (dispatch: AppDispatch) => {
 		try {
-			await dispatch(createDetails(data));
+			await dispatch(createUser(data));
 			// console.log(response);
 		} catch (error) {
 			console.error("Произошла ошибка", error);
@@ -55,4 +55,4 @@ export const fetchCreateDetails = (data: Inter.CreateDetail) => {
 };
 
 
-export default createDetailsSlice.reducer;
+export default createUsersSlice.reducer;

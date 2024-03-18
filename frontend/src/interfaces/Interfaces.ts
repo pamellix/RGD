@@ -10,3 +10,14 @@ export interface CreateDetail {
     classificator: string,
     description: string,
 }
+
+export interface CreateUser {
+    login: string,
+    password: string,
+    role: string
+}
+
+export interface Login {
+    login: string,
+    password: string,
+}

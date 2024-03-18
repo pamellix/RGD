@@ -6,44 +6,48 @@ import FormControl from "@mui/joy/FormControl";
 import FormLabel from "@mui/joy/FormLabel";
 import Input from "@mui/joy/Input";
 import Button from "@mui/joy/Button";
-import Link from "@mui/joy/Link";
 import "@fontsource/inter";
-import ModeToggle from "./ModeToggle";
-import { useAppDispatch, useAppSelector } from "../redux/store";
-import { fetchLogin } from "../redux/slices/Login";
+import { useAppDispatch } from "../redux/store";
 import { useNavigate } from "react-router";
+import { fetchCreateUser } from "../redux/slices/SignUp";
+import * as Inter from "../interfaces/Interfaces";
 
-export default function LoginFinal() {
+export default function SignIn() {
 
 	const dispatch = useAppDispatch();
 	const navigate = useNavigate();
 
-	const [data, setData] = React.useState({login: "", password: ""});
-	const handleData = (e: React.ChangeEvent<HTMLInputElement>, name: string) => {
+	const [data, setData] = React.useState({login: "", password: "", role: ""});
+	const handleData = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>, name: string) => {
 		setData({...data, [name]: e.target.value});
 	};
 
-	const auth = useAppSelector((state) => state.login).login;
-
 	async function submit () {
+
+		const date: Inter.CreateUser = {
+			login: data.login,
+			password: data.password,
+			role: data.role
+		};
+
 		try {
-			const answer = await dispatch(fetchLogin(data.login));
-			return answer?.payload !== "" ? navigate("/all-details") : alert("Неверный логин или пароль");
+			await dispatch(fetchCreateUser(date));
+			console.log("S");
 		} catch {
-			console.log("ERROR");
+			console.log("Такой пользователь уже существует");
 		}
+
+		navigate("/");
 	}
 
 	return (
 		<main>
-			<ModeToggle />
 			<CssBaseline />
 			<Sheet sx={{ width: 300, mx: "auto", my: 30, py: 3, px: 2, display: "flex", flexDirection: "column", gap: 2, borderRadius: "sm", boxShadow: "md",}} variant="outlined">
 				<div>
 					<Typography level="h4" component="h1">
-						<b>Welcome!</b>
+						<b>Sign up</b>
 					</Typography>
-					<Typography level="body-sm">Sign in to continue.</Typography>
 				</div>
 				<FormControl>
 					<FormLabel>Login</FormLabel>
@@ -51,18 +55,22 @@ export default function LoginFinal() {
 				</FormControl>
 				<FormControl>
 					<FormLabel>Password</FormLabel>
-					<Input name="password" type="password" placeholder="password" value={data.password} onChange={(e) => handleData(e, "password")}/>
+					<Input name="password" type="text" placeholder="password" value={data.password} onChange={(e) => handleData(e, "password")}/>
 				</FormControl>
-				<Button sx={{ mt: 1 /* margin top */ }} onClick={() => submit()}>
-					<p>Log in</p>	
-				</Button>
-				<Typography
+				<FormControl>
+					<select value={data.role} onChange={(e) => handleData(e, "role")}>
+						<option value="user">User</option>
+						<option value="admin">Admin</option>
+					</select>
+				</FormControl>
+				<Button sx={{ mt: 1 /* margin top */ }} onClick={() => submit()}>Sign in</Button>
+				{/* <Typography
 					endDecorator={<Link href="/sign-in">Sign up</Link>}
 					fontSize="sm"
 					sx={{ alignSelf: "center" }}
 				>
           Don&apos;t have an account?
-				</Typography>
+				</Typography> */}
 			</Sheet>
 		</main>
 	);

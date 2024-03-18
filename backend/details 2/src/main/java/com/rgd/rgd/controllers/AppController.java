@@ -1,71 +1,78 @@
 package com.rgd.rgd.controllers;
 
 import com.rgd.rgd.services.DetailService;
+import com.rgd.rgd.services.UserService;
 import com.rgd.rgd.models.DetailClass;
+import com.rgd.rgd.models.UserClass;
 
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-
 import java.util.List;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-
+import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
 @CrossOrigin
 @RequestMapping("api/v1/details")
 @AllArgsConstructor
 public class AppController {
-    // private AppService appService;
-    private final DetailService service;
+    private final DetailService detailService;
+    private final UserService userService;
 
     @GetMapping("/all-details")
     public List<DetailClass> findAllDetails() {
-        return service.findAllDetails();
+        return detailService.findAllDetails();
+    }
+    
+    @GetMapping("/all-users")
+    public List<UserClass> findAllUsers() {
+        return userService.findAllUsers();
     }
     
     @PostMapping("/save-detail")
     public DetailClass saveDetail(@RequestBody DetailClass detailClass) {
-        return service.saveDetail(detailClass);
+        return detailService.saveDetail(detailClass);
     }
 
-    @GetMapping("{detail}")
+    @PostMapping("/save-user")
+    public UserClass saveUser(@RequestBody UserClass user) {
+        return userService.saveUser(user);
+    }
+
+    @GetMapping("/detail/{detail}")
     public DetailClass findByDetail(@PathVariable String detail) {
-        return service.findByDetail(detail);
+        return detailService.findByDetail(detail);
+    }
+
+    @GetMapping("/user/{login}")
+    public UserClass findByLogin(@PathVariable String login) {
+        return userService.findByLogin(login);
     }
 
     @PutMapping("update-detail")
     public DetailClass updateDetail(DetailClass detailClass) {
-        return service.updateDetail(detailClass);
+        return detailService.updateDetail(detailClass);
+    }
+
+    @PutMapping("update-user")
+    public UserClass updateUser(UserClass user) {
+        return userService.updateUser(user);
     }
 
     @DeleteMapping("delete-detail/{detail}")
     public void deleteDetail(@PathVariable String detail) {
-        service.deleteDetail(detail);
+        detailService.deleteDetail(detail);
+    }
+
+    @DeleteMapping("delete-user/{login}")
+    public void deleteUser(@PathVariable String login) {
+        userService.deleteUser(login);
     }
 
     @GetMapping("/welcome")
     public String welcome() {
         return "Welcome to unprotected page";
     }
-
-    // @GetMapping("/all-app")
-    // @PreAuthorize("hasAuthority('ROLE_USER')")
-    // public List<Application> allApplications() {
-    //     return appService.allApplications();
-    // }
-
-
-    // @GetMapping("/{id}")
-    // @PreAuthorize("hasAuthority('ROLE_ADMIN')")
-    // public Application applicationByID(@PathVariable int id) {
-    //     return appService.applicationById(id);
-    // }
-
-    // @PostMapping("/new-user")
-    // public String addUser(@RequestBody MyUser user) {
-    //     appService.addUser(user);
-    //     return "User is saved";
-    // }
 }

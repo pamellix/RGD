@@ -3,12 +3,16 @@ import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
 import getDetailsReducer from "./slices/GetDetails";
 import getDetailReducer from "./slices/GetDetail";
 import createDetailReducer from "./slices/CreateDetail";
+import loginReducer from "./slices/Login";
+import createUserReducer from "./slices/SignUp";
 
 const store = configureStore({
 	reducer: {
 		getDetails: getDetailsReducer,
 		getDetail: getDetailReducer,
-		createDetail: createDetailReducer
+		createDetail: createDetailReducer,
+		login: loginReducer,
+		signup: createUserReducer
 	}
 });
 
