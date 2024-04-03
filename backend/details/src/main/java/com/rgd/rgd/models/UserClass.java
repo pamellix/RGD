@@ -4,18 +4,20 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Data;
 
 @Data
 @Entity
-public class DetailClass {
+@Table (name = "user_class")
+public class UserClass {
     
     @Id
     @GeneratedValue
     private Long id;
 
     @Column(unique = true)
-    private String detail;
-    private String classificator;
-    private String description;
+    private String login;
+    private String password;
+    private String role;
 }
