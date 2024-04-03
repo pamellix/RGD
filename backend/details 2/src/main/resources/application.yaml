@@ -1,13 +1,13 @@
 #file: noinspection SpringBootApplicationYaml
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5400/rgb_db
+    url: jdbc:postgresql://localhost:5400/postgres
     username: admin
     password: root
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: false

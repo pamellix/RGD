@@ -19,4 +19,3 @@ public class UserClass {
     private String password;
     private String role;
 }
-

@@ -5,7 +5,6 @@ import java.util.*;
 
 public interface DetailService {
     List<DetailClass> findAllDetails();
-    
     DetailClass saveDetail(DetailClass detailClass);
     DetailClass findByDetail(String detail);
     DetailClass updateDetail(DetailClass detailClass);

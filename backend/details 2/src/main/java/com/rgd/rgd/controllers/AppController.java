@@ -9,13 +9,10 @@ import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
 @CrossOrigin
-@RequestMapping("api/v1/details")
+@RequestMapping(path = "api/v1/details", produces="application/json")
 @AllArgsConstructor
 public class AppController {
     private final DetailService detailService;
