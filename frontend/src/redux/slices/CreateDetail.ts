@@ -13,9 +13,6 @@ export const createDetails = createAsyncThunk<void, Inter.CreateDetail, { reject
 			const URL = `${process.env.REACT_APP_CREATE_DETAIL}`;
 			const response = await appJSON.post<void>(URL, data);
 
-			if (response.status === 200) {
-				alert("Удачно!");
-			}
 			return response.data;
 		} catch
 		(error: unknown) {

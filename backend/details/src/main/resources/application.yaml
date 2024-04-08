@@ -1,13 +1,13 @@
 #file: noinspection SpringBootApplicationYaml
 spring:
   datasource:
-    url: jdbc:postgresql://postgres:5432/postgres
-    username: admin
-    password: root
+    url: jdbc:postgresql://${POSTGRES_HOSTNAME}:${PGPORT}/${POSTGRES_DB}
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: validate
+      ddl-auto: create
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: false

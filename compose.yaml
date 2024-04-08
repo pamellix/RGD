@@ -7,6 +7,7 @@
 # You can add other services your application may depend on here, such as a
 # database or a cache. For examples, see the Awesome Compose repository:
 # https://github.com/docker/awesome-compose
+
 services:
   postgres:
     container_name: postgres
@@ -25,14 +26,35 @@ services:
       retries: 5
 
   client-backend:
-    image: client
+    image: client:0.0.1
     build:
-      context: .
+      context: ./backend/details
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
     depends_on:
       - postgres
+    environment:
+      DATABASE_NO_SSL: "true"
+      DATABASE_URL: ${SPRING_DATASOURCE_URL}
+    networks:
+      - app-network
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "0.0.0.0:3000:3000"
+    env_file:
+      - frontend/.env
+    volumes:
+      - ./frontend/src:/frontend/src
+    #
+    restart: unless-stopped
 
 volumes:
   postgres-db:
+    driver: local
+
+networks:
+  app-network:
+    driver: bridge

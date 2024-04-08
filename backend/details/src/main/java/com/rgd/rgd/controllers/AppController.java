@@ -15,7 +15,9 @@ import java.util.List;
 @RequestMapping(path = "api/v1/details", produces="application/json")
 @AllArgsConstructor
 public class AppController {
+
     private final DetailService detailService;
+
     private final UserService userService;
 
     @GetMapping("/all-details")

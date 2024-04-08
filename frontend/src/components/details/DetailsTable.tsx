@@ -10,6 +10,8 @@ import styles from "./Styles.module.css";
 import * as Inter from "../../interfaces/Interfaces";
 import { NavLink } from "react-router-dom";
 import { fetchCreateDetails } from "../../redux/slices/CreateDetail";
+import {ToastContainer, toast} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 const DetailsTable: React.FC = () => {
@@ -70,6 +72,7 @@ const DetailsTable: React.FC = () => {
 
 		try {
 			await dispatch(fetchCreateDetails(data));
+			toast.info("Success!");
 		} catch {
 			console.log("ERROR 405");
 		}
@@ -123,6 +126,7 @@ const DetailsTable: React.FC = () => {
 				<Button onClick={submit}>Добавить</Button>
 			</div>
 		</div>
+		<ToastContainer/>
 	</main>);
 };
 

@@ -55,7 +55,7 @@ export default function SignIn() {
 				</FormControl>
 				<FormControl>
 					<FormLabel>Password</FormLabel>
-					<Input name="password" type="text" placeholder="password" value={data.password} onChange={(e) => handleData(e, "password")}/>
+					<Input name="password" type="password" placeholder="password" value={data.password} onChange={(e) => handleData(e, "password")}/>
 				</FormControl>
 				<FormControl>
 					<select value={data.role} onChange={(e) => handleData(e, "role")}>
