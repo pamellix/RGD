@@ -8,22 +8,24 @@
 # database or a cache. For examples, see the Awesome Compose repository:
 # https://github.com/docker/awesome-compose
 
+version: "3.9"
+
 services:
-  postgres:
-    container_name: postgres
-    image: postgres:alpine3.18
-    restart: always
-    volumes:
-      - postgres-db:/var/lib/postgresql/data
-    env_file:
-      - .env
-    ports:
-      - "5432:5432"
-    healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
+#  postgres:
+#    container_name: postgres
+#    image: postgres:alpine3.18
+#    restart: always
+#    volumes:
+#      - postgres-db:/var/lib/postgresql/data
+#    env_file:
+#      - .env
+#    ports:
+#      - "5432:5432"
+#    healthcheck:
+#      test: [ "CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}"]
+#      interval: 10s
+#      timeout: 5s
+#      retries: 5
 
   client-backend:
     image: client:0.0.1
@@ -32,8 +34,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
-    depends_on:
-      - postgres
     environment:
       DATABASE_NO_SSL: "true"
       DATABASE_URL: ${SPRING_DATASOURCE_URL}

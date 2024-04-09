@@ -2,7 +2,7 @@ package com.rgd.rgd.controllers;
 
 import com.rgd.rgd.services.DetailService;
 import com.rgd.rgd.services.UserService;
-import com.rgd.rgd.models.DetailClass;
+import com.rgd.rgd.models.Registrator;
 import com.rgd.rgd.models.UserClass;
 
 import lombok.AllArgsConstructor;
@@ -21,7 +21,7 @@ public class AppController {
     private final UserService userService;
 
     @GetMapping("/all-details")
-    public List<DetailClass> findAllDetails() {
+    public List<Registrator> findAllDetails() {
         return detailService.findAllDetails();
     }
     
@@ -31,7 +31,7 @@ public class AppController {
     }
     
     @PostMapping("/save-detail")
-    public DetailClass saveDetail(@RequestBody DetailClass detailClass) {
+    public Registrator saveDetail(@RequestBody Registrator detailClass) {
         return detailService.saveDetail(detailClass);
     }
 
@@ -41,8 +41,8 @@ public class AppController {
     }
 
     @GetMapping("/detail/{detail}")
-    public DetailClass findByDetail(@PathVariable String detail) {
-        return detailService.findByDetail(detail);
+    public Registrator findByDetail(@PathVariable String dec_number) {
+        return detailService.findByDec_number(dec_number);
     }
 
     @GetMapping("/user/{login}")
@@ -51,7 +51,7 @@ public class AppController {
     }
 
     @PutMapping("update-detail")
-    public DetailClass updateDetail(DetailClass detailClass) {
+    public Registrator updateDetail(Registrator detailClass) {
         return detailService.updateDetail(detailClass);
     }
 
@@ -61,8 +61,8 @@ public class AppController {
     }
 
     @DeleteMapping("delete-detail/{detail}")
-    public void deleteDetail(@PathVariable String detail) {
-        detailService.deleteDetail(detail);
+    public void deleteDetail(@PathVariable String dec_number) {
+        detailService.deleteDec_number(dec_number);
     }
 
     @DeleteMapping("delete-user/{login}")
