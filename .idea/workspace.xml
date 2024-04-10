@@ -6,6 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="690d2eaf-bc61-4215-93a9-d9a80466ab5d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/details/db.migrations/V1_POSTGRES_DB.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/details/myFlywayConfig.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/details/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/details/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/details/src/main/java/com/rgd/rgd/models/Registrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/details/src/main/java/com/rgd/rgd/models/Registrator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/details/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/details/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,23 +44,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/paultagankin/Documents/Projects/Java/RGD",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "ts.external.directory.path": "/Users/paultagankin/Documents/Projects/Java/RGD/frontend/node_modules/typescript/lib"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/paultagankin/Documents/Projects/Java/RGD&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/paultagankin/Documents/Projects/Java/RGD/frontend/node_modules/typescript/lib&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -87,6 +93,7 @@
       <workItem from="1712663088743" duration="512000" />
       <workItem from="1712664783253" duration="8479000" />
       <workItem from="1712739614901" duration="3078000" />
+      <workItem from="1712786977142" duration="122000" />
     </task>
     <servers />
   </component>

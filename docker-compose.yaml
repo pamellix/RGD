@@ -29,8 +29,6 @@ services:
 
   client-backend:
     image: client:0.0.1
-    depends_on:
-      - postgres
     build:
       context: ./backend/details
       dockerfile: Dockerfile

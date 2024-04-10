@@ -1,10 +1,8 @@
 package com.rgd.rgd.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import java.sql.Date;
+
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
@@ -13,15 +11,24 @@ import lombok.Data;
 public class Registrator {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "registrator_seq_generator")
+    @SequenceGenerator(name = "registrator_seq_generator", sequenceName = "registrator_seq", allocationSize = 1)
     private Long id;
+
+    private String code;
 
     @Column(unique = true, name = "dec_number")
     private String decNumber;
+
     private String name;
-    private String data;
+
+    @Column(name = "make_date")
+    private Date makeDate;
+
     private String creator;
+
     @Column(name = "first_use")
     private String firstUse;
+
     private String note;
 }
