@@ -7,13 +7,8 @@
     <list default="true" id="690d2eaf-bc61-4215-93a9-d9a80466ab5d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/details/src/main/java/com/rgd/rgd/controllers/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/details/src/main/java/com/rgd/rgd/controllers/AppController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/details/src/main/java/com/rgd/rgd/models/DetailClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/details/src/main/java/com/rgd/rgd/models/Registrator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/details/src/main/java/com/rgd/rgd/repository/DetailRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/details/src/main/java/com/rgd/rgd/repository/DetailRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/details/src/main/java/com/rgd/rgd/services/DetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/details/src/main/java/com/rgd/rgd/services/DetailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/details/src/main/java/com/rgd/rgd/services/impl/DetailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/details/src/main/java/com/rgd/rgd/services/impl/DetailServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/details/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/details/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +24,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -92,10 +88,22 @@
       <workItem from="1712660782970" duration="1285000" />
       <workItem from="1712663088743" duration="512000" />
       <workItem from="1712664783253" duration="8479000" />
+      <workItem from="1712739614901" duration="3078000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
