@@ -11,7 +11,7 @@ import lombok.Data;
 @Entity
 @Table(name = "registrator")
 public class Registrator {
-    
+
     @Id
     @GeneratedValue
     private Long id;
