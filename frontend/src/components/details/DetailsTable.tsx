@@ -57,6 +57,7 @@ const DetailsTable: React.FC = () => {
 
 
 	const data: Inter.DetailsTable[] = useAppSelector((state) => state.getDetails);
+	
 
 	if (!Array.isArray(data)) {
 		return null;
