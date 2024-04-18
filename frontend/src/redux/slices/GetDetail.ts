@@ -6,16 +6,21 @@ import app from "../../utils/AxiosConfig";
 
 const initialState: Inter.DetailsTable = {
 	id: -1,
-	detail: "",
-	classificator: "",
-	description: "",
+	code: "",
+	decNumber: "",
+	name: "",
+	makeDate: "",
+	creator: "",
+	firstUse: "",
+	note: ""
 };
 
-export const getDetail = createAsyncThunk<Inter.DetailsTable, string, { rejectValue: string }>(
+export const getDetail = createAsyncThunk<Inter.DetailsTable, string, { rejectValue: string }>( 
 	"details/getDetail",
 	async (data: string, {rejectWithValue}) => {
 		try {
-			const URL = `${process.env.REACT_APP_GET_DETAIL}${data}`;
+			const encodedData = encodeURIComponent(data);
+			const URL = `${process.env.REACT_APP_GET_DETAIL}${encodedData}`;
 			const response = await app.get<Inter.DetailsTable>(URL);
 
 			return response.data;
@@ -48,7 +53,6 @@ export const fetchDetail = (data: string) => {
 	return async (dispatch: AppDispatch) => {
 		try {
 			await dispatch(getDetail(data));
-			// console.log(response);
 		} catch (error) {
 			console.error("Произошла ошибка", error);
 		}

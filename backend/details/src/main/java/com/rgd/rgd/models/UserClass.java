@@ -1,10 +1,8 @@
 package com.rgd.rgd.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import java.sql.Date;
+
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
@@ -13,7 +11,8 @@ import lombok.Data;
 public class UserClass {
     
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_class_seq_generator")
+    @SequenceGenerator(name = "user_class_seq_generator", sequenceName = "user_class_seq", allocationSize = 1)
     private Long id;
 
     @Column(unique = true)
