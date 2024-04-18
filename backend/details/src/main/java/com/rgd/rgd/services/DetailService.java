@@ -6,7 +6,7 @@ import java.util.*;
 public interface DetailService {
     List<Registrator> findAllDetails();
     Registrator saveDetail(Registrator detailClass);
-    Registrator findByDec_number(String dec_number);
+    Registrator findByDecNumber(String decNumber);
     Registrator updateDetail(Registrator detailClass);
-    void deleteDec_number(String dec_number);
+    void deleteDecNumber(String decNumber);
 }

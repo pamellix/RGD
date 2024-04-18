@@ -12,7 +12,7 @@ public class Registrator {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "registrator_seq_generator")
-    @SequenceGenerator(name = "registrator_seq_generator", sequenceName = "registrator_seq", allocationSize = 1)
+    @SequenceGenerator(name = "registrator_seq_generator", sequenceName = "registrator_id_seq", allocationSize = 1)
     private Long id;
 
     private String code;

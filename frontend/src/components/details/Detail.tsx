@@ -27,9 +27,13 @@ const Detail: React.FC = () => {
 	const data = useAppSelector((state) => state.getDetail);
 
 	return (<section className={styles.detail}>
-		<h2>Деталь: {data.detail}</h2>
-		<p>Классификатор: {data.classificator}</p>
-		<span style={{display: "block"}}>Описание: {data.description}</span>
+		<p>ID: {data.id}</p>
+		<h2>Деталь: {data.decNumber}</h2>
+		<p>Первое использование: {data.firstUse}</p>
+		<p>Имя: {data.name}</p>
+		<p>Код: {data.code}</p>
+		<p>Дата создания: {data.makeDate}</p>
+		<span style={{display: "block"}}>Заметки: {data.note}</span>
 		<NavLink to="../all-details">Вернуться ко всем деталям</NavLink>
 	</section>);
 };

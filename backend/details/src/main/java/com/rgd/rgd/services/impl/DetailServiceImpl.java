@@ -30,8 +30,8 @@ public class DetailServiceImpl implements DetailService {
     }
 
     @Override
-    public Registrator findByDec_number(String dec_number) {
-        return repository.findByDecNumber(dec_number);
+    public Registrator findByDecNumber(String decNumber) {
+        return repository.findByDecNumber(decNumber);
     }
 
     @Override
@@ -41,7 +41,7 @@ public class DetailServiceImpl implements DetailService {
 
     @Override
     @Transactional
-    public void deleteDec_number(String dec_number) {
-        repository.deleteByDecNumber(dec_number);
+    public void deleteDecNumber(String decNumber) {
+        repository.deleteByDecNumber(decNumber);
     }
 }

@@ -1,21 +1,22 @@
-# Fetching the latest node image on alpine linux
-FROM node:alpine AS development
+# Use an official Node runtime as a parent image
+FROM node:20.11
 
-# Declaring env
-ENV NODE_ENV development
-
-# Setting up the work directory
+# Set the working directory in the container
 WORKDIR /frontend
 
-# Installing dependencies
-COPY ./package*.json /frontend
-
-RUN npm install
-
-# Copying all the files in our project
+# Copy the current directory contents into the container at /usr/src/app
 COPY . .
 
-RUN npm run build
+# Install any needed packages specified in package.json
+RUN npm install && \
+    npm rebuild node-sass && \
+    npm run build
 
-# Starting our application
-CMD ["npm","start"]
+# Make port 3000 available to the world outside this container
+EXPOSE 3000
+
+# Define environment variable
+ENV NODE_ENV=production
+
+# Run the app when the container launches
+ENTRYPOINT ["npx", "serve", "-l", "3000", "-s", "build"]

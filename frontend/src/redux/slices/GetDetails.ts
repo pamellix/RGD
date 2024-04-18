@@ -7,9 +7,13 @@ import app from "../../utils/AxiosConfig";
 const initialState: Inter.DetailsTable[] = [
 	{
 		id: -1,
-		detail: "",
-		classificator: "",
-		description: "",
+		code: "",
+		decNumber: "",
+		name: "",
+		makeDate: "",
+		creator: "",
+		firstUse: "",
+		note: ""
 	}
 ];
 

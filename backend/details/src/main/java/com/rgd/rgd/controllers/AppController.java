@@ -40,9 +40,9 @@ public class AppController {
         return userService.saveUser(user);
     }
 
-    @GetMapping("/detail/{detail}")
-    public Registrator findByDetail(@PathVariable String dec_number) {
-        return detailService.findByDec_number(dec_number);
+    @GetMapping("/detail/{decNumber}")
+    public Registrator findByDetail(@PathVariable String decNumber) {
+        return detailService.findByDecNumber(decNumber);
     }
 
     @GetMapping("/user/{login}")
@@ -61,8 +61,8 @@ public class AppController {
     }
 
     @DeleteMapping("delete-detail/{detail}")
-    public void deleteDetail(@PathVariable String dec_number) {
-        detailService.deleteDec_number(dec_number);
+    public void deleteDetail(@PathVariable String decNumber) {
+        detailService.deleteDecNumber(decNumber);
     }
 
     @DeleteMapping("delete-user/{login}")
